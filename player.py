@@ -1,6 +1,7 @@
 import math
 
 import pygame
+from pygame import mixer
 
 
 class Player:
@@ -48,7 +49,9 @@ class Player:
 
     def is_hit(self, x, y):
         distance = math.sqrt(math.pow((self.xcor - x), 2) + math.pow((self.ycor - y), 2))
-        if distance < 30:
+        if distance < 65:
+            collision_sound = mixer.Sound("Sounds/explosion.wav")
+            collision_sound.play()
             return True
         return False
 

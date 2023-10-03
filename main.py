@@ -66,6 +66,7 @@ while running:
         if player.is_hit(enemies[i].xcor, enemies[i].ycor):
             for j in range(NO_OF_ENEMIES):
                 enemies[j].ycor = 2000
+            player.ycor = 2000
             game_over = True
             break
 
