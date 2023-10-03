@@ -7,9 +7,8 @@ class Bullet:
         self.player = player
         self.screen = screen
         self.bullet_img = pygame.image.load("Images/bullet.png")
-        self.xcor = 0
-        self.ycor = 0
-        self.xcor_change = 0
+        self.xcor = player.xcor
+        self.ycor = player.ycor
         self.ycor_change = 10
 
         # Bullet State:
@@ -28,4 +27,5 @@ class Bullet:
                     bullet_sound = mixer.Sound("Sounds/laser.wav")
                     bullet_sound.play()
                     self.xcor = self.player.xcor
+                    self.ycor = self.player.ycor
                     self.fire(self.xcor, self.ycor)

@@ -55,4 +55,4 @@ class Player:
     def game_over(self):
         font = pygame.font.Font("freesansbold.ttf", 65)
         text = font.render("Game Over !!", True, (255, 255, 255))
-        self.screen.blit(text, (250, 200))
+        self.screen.blit(text, (225, 225))

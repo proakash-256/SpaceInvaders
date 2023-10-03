@@ -74,6 +74,7 @@ while running:
             player.game_over()
 
     if bullet.ycor <= 0:
+        bullet.xcor = player.xcor
         bullet.ycor = player.ycor
         bullet.state = "ready"
 
