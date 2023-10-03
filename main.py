@@ -13,6 +13,7 @@ pygame.init()
 # Creating the screen
 screen = pygame.display.set_mode((800, 600))
 running = True
+game_over = False
 
 # Title, Icon and Background
 pygame.display.set_caption("Space Invaders")
@@ -65,10 +66,12 @@ while running:
         if player.is_hit(enemies[i].xcor, enemies[i].ycor):
             for j in range(NO_OF_ENEMIES):
                 enemies[j].ycor = 2000
-            player.game_over()
+            game_over = True
             break
 
         enemies[i].update()
+        if game_over:
+            player.game_over()
 
     if bullet.ycor <= 0:
         bullet.ycor = player.ycor
